@@ -1,0 +1,360 @@
+{% extends "base.html" %}
+
+{% block title %}Research Dashboard | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-dashboard{% endblock %}
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<section
+  class="section dashboard-shell"
+  id="dashboardRoot"
+  data-total-projects="{{ total_projects }}"
+  data-approved-projects="{{ approved_projects }}"
+  data-pending-projects="{{ pending_projects }}"
+  data-total-startups="{{ total_startups }}"
+  data-total-ipr="{{ total_ipr }}"
+  data-total-users="{{ total_users }}"
+>
+  <div class="container dashboard-shell-grid">
+    <aside class="dashboard-sidebar panel">
+      <div class="panel-header">
+        <div>
+          <div class="kicker">Control Panel</div>
+          <h2 class="panel-title">Innovation watchtower</h2>
+          <p class="panel-subtitle">
+            Dashboard-first control center for research, startup and IPR monitoring.
+          </p>
+        </div>
+      </div>
+
+      <div class="panel-body dashboard-sidebar-body">
+        <div class="sidebar-section">
+          <span class="sidebar-eyebrow">Navigation</span>
+          <nav class="sidebar-links" aria-label="Dashboard sections">
+            <a href="#overview" class="sidebar-link">Overview</a>
+            <a href="#filters" class="sidebar-link">Filters</a>
+            <a href="#analytics" class="sidebar-link">Analytics</a>
+            <a href="#records" class="sidebar-link">Recent records</a>
+          </nav>
+        </div>
+
+        <div class="sidebar-section">
+          <span class="sidebar-eyebrow">System Health</span>
+          <div class="health-grid">
+            <div class="health-card">
+              <strong>Database</strong>
+              <span>Connected</span>
+            </div>
+            <div class="health-card">
+              <strong>Charts</strong>
+              <span>Live</span>
+            </div>
+            <div class="health-card">
+              <strong>Imports</strong>
+              <span>Synced</span>
+            </div>
+            <div class="health-card">
+              <strong>Metrics</strong>
+              <span>Updated</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sidebar-section">
+          <span class="sidebar-eyebrow">Quick Summary</span>
+          <ul class="sidebar-list">
+            <li><strong id="sidebarVisibleCount">{{ total_projects }}</strong><span>visible projects</span></li>
+            <li><strong>{{ approved_projects }}</strong><span>approved items</span></li>
+            <li><strong>{{ pending_projects }}</strong><span>pending items</span></li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+
+    <main class="dashboard-main" id="overview">
+      <section class="page-banner dashboard-banner">
+        <div class="page-banner-grid">
+          <div>
+            <div class="kicker">Operational Dashboard</div>
+            <h1>Analytics-heavy view for research, startups and innovation oversight.</h1>
+            <p>
+              Monitor project intake, review activity and portfolio health from a single interface that behaves like a modern SaaS dashboard.
+            </p>
+          </div>
+
+          <div class="banner-actions">
+            <a href="/research-form" class="btn btn-primary">Add Research</a>
+            <a href="/startups" class="btn btn-secondary">Startup Module</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel dashboard-toolbar" id="filters">
+        <div class="panel-header">
+          <div>
+            <div class="kicker">Filters</div>
+            <h2 class="panel-title">Interactive controls</h2>
+            <p class="panel-subtitle">Search, sort and filter the recent submissions table in real time.</p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="toolbar-grid">
+            <label class="toolbar-field">
+              <span>Search projects</span>
+              <input id="projectSearch" class="search-input" type="search" placeholder="Title, domain or researcher">
+            </label>
+
+            <label class="toolbar-field">
+              <span>Status</span>
+              <select id="statusFilter" class="select-input">
+                <option value="all">All statuses</option>
+              </select>
+            </label>
+
+            <label class="toolbar-field">
+              <span>Sort</span>
+              <select id="sortFilter" class="select-input">
+                <option value="recent">Latest first</option>
+                <option value="oldest">Oldest first</option>
+                <option value="title">Title A-Z</option>
+                <option value="researcher">Researcher A-Z</option>
+              </select>
+            </label>
+
+            <div class="toolbar-field theme-switcher">
+              <span>Palette</span>
+              <div class="theme-buttons" id="themeSwitcher">
+                <button type="button" class="theme-button is-active" data-theme="emerald">Emerald</button>
+                <button type="button" class="theme-button" data-theme="ocean">Ocean</button>
+                <button type="button" class="theme-button" data-theme="sunset">Sunset</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-filters" id="domainFilters" aria-label="Domain filters"></div>
+        </div>
+      </section>
+
+      <section class="section dashboard-section">
+        <div class="kpi-grid" id="kpiGrid">
+          <article class="kpi-card">
+            <span class="eyebrow">Projects</span>
+            <h3>{{ total_projects }}</h3>
+            <p>Total projects recorded in the system.</p>
+          </article>
+
+          <article class="kpi-card">
+            <span class="eyebrow">Approved</span>
+            <h3 id="approvedCount">{{ approved_projects }}</h3>
+            <p>Projects already cleared for execution.</p>
+          </article>
+
+          <article class="kpi-card">
+            <span class="eyebrow">Pending</span>
+            <h3 id="pendingCount">{{ pending_projects }}</h3>
+            <p>Projects waiting on review or action.</p>
+          </article>
+
+          <article class="kpi-card">
+            <span class="eyebrow">Startups</span>
+            <h3>{{ total_startups }}</h3>
+            <p>Registered startups and incubation records.</p>
+          </article>
+
+          <article class="kpi-card">
+            <span class="eyebrow">IPR</span>
+            <h3>{{ total_ipr }}</h3>
+            <p>Intellectual property records in the repository.</p>
+          </article>
+
+          <article class="kpi-card">
+            <span class="eyebrow">Users</span>
+            <h3>{{ total_users }}</h3>
+            <p>Registered users participating in the platform.</p>
+          </article>
+
+          <article class="kpi-card kpi-dynamic">
+            <span class="eyebrow">Visible</span>
+            <h3 id="visibleCount">{{ total_projects }}</h3>
+            <p>Rows currently shown after filtering.</p>
+          </article>
+
+          <article class="kpi-card kpi-dynamic">
+            <span class="eyebrow">Approval rate</span>
+            <h3 id="approvalRate">0%</h3>
+            <p>Approved records in the active slice.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="panel dashboard-insight-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Live Slice</div>
+              <h2 class="panel-title">Current filtered breakdown</h2>
+              <p class="panel-subtitle">
+                This snapshot updates with the search, status, domain, sort and theme controls above.
+              </p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="liveSliceLabel">Ready</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="insight-matrix">
+              <article class="insight-card">
+                <span class="eyebrow">Visible rows</span>
+                <h3 id="liveVisibleRows">{{ total_projects }}</h3>
+                <p>Records shown in the active slice.</p>
+              </article>
+
+              <article class="insight-card">
+                <span class="eyebrow">Approval rate</span>
+                <h3 id="liveApprovalRate">0%</h3>
+                <p>Approved rows as a share of the slice.</p>
+              </article>
+
+              <article class="insight-card">
+                <span class="eyebrow">Top domain</span>
+                <h3 id="liveTopDomain">All domains</h3>
+                <p>Most common research domain in the active view.</p>
+              </article>
+
+              <article class="insight-card">
+                <span class="eyebrow">Top status</span>
+                <h3 id="liveTopStatus">All statuses</h3>
+                <p>Most frequent status across the filtered rows.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="analytics">
+        <div class="dashboard-chart-grid">
+          <article class="chart-card chart-span-2 chart-hero">
+            <div class="chart-card-head">
+              <div>
+                <span class="chart-kicker">Research throughput</span>
+                <h3>Research Growth Trend</h3>
+              </div>
+              <div class="chart-metrics-inline">
+                <span class="mini-stat">
+                  <strong id="trendMetric">{{ total_projects }}</strong>
+                  <em>total projects</em>
+                </span>
+                <span class="mini-stat">
+                  <strong id="trendDelta">+18%</strong>
+                  <em>trend lift</em>
+                </span>
+              </div>
+            </div>
+            <canvas id="researchChart"></canvas>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="chart-kicker">Review mix</span>
+                <h3>Project Status Distribution</h3>
+              </div>
+            </div>
+            <canvas id="statusChart"></canvas>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="chart-kicker">Startup mix</span>
+                <h3>Startup Ecosystem Distribution</h3>
+              </div>
+            </div>
+            <canvas id="startupChart"></canvas>
+          </article>
+
+          <article class="chart-card">
+            <div class="chart-card-head">
+              <div>
+                <span class="chart-kicker">IPR mix</span>
+                <h3>IPR Analytics</h3>
+              </div>
+            </div>
+            <canvas id="iprChart"></canvas>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="records">
+        <div class="panel dashboard-table-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Recent Activity</div>
+              <h2 class="panel-title">Recent research submissions</h2>
+              <p class="panel-subtitle">
+                Latest records pulled from the database, with search and filter support.
+              </p>
+            </div>
+
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="tableStatusText">{{ projects|length }} records loaded</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Domain</th>
+                    <th>Researcher</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody id="projectTableBody">
+                  {% for project in projects %}
+                  <tr
+                    data-status="{{ project.status|e }}"
+                    data-domain="{{ project.domain|e }}"
+                    data-title="{{ project.title|e }}"
+                    data-researcher="{{ project.researcher|e }}"
+                    data-project-id="{{ project.id }}"
+                  >
+                    <td>{{ project.id }}</td>
+                    <td class="table-title">{{ project.title }}</td>
+                    <td>{{ project.domain }}</td>
+                    <td>{{ project.researcher }}</td>
+                    <td>
+                      <span class="status-badge status-{{ project.status|lower|replace(' ', '-') }}">
+                        {{ project.status }}
+                      </span>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+
+            <div id="tableEmptyState" class="dashboard-empty" hidden>
+              <h3>No matching projects</h3>
+              <p>Try a different search term, clear the current filters, or switch the status view.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,41 @@
+ipr_id,project_id,patent_title,applicant_name,application_date,approval_status,patent_type,reviewer
+1,13,Digital Patent Workflow Automation,Rahul Tiwari,2026-01-05,Approved,Software Patent,Aryan Mehta
+2,35,Patent Similarity Detection Engine,Tanvi Mehra,2026-01-07,Pending,AI Patent,Ritika Sharma
+3,1,AI-Based Disease Prediction Framework,Riya Shah,2026-01-10,Approved,Healthcare Patent,Karan Malhotra
+4,3,Secure Blockchain Voting Infrastructure,Dev Khanna,2026-01-12,Approved,Blockchain Patent,Neha Kapoor
+5,7,Automated Waste Segregation System,Sneha Kapoor,2026-01-14,Approved,Environmental Patent,Dev Arora
+6,8,Cyber Threat Detection using Neural Networks,Aniket Jain,2026-01-16,Pending,Cybersecurity Patent,Ananya Singh
+7,9,Urban Delivery Robotics Architecture,Yash Bhatia,2026-01-18,Approved,Robotics Patent,Rohan Verma
+8,10,Emotion-Aware Mental Health Chatbot,Priya Nair,2026-01-20,Approved,Healthcare Patent,Tanvi Jain
+9,12,Drone-Based Crop Analytics Platform,Arjun Patel,2026-01-22,Approved,Agriculture Patent,Yash Bhatia
+10,14,Electric Vehicle Smart Charging Network,Manav Soni,2026-01-25,Pending,Energy Patent,Meera Sethi
+11,15,AI Resume Evaluation System,Vedant Rao,2026-01-28,Approved,HR Tech Patent,Aditya Khurana
+12,17,Flood Disaster Prediction Engine,Shruti Malhotra,2026-02-01,Approved,AI Patent,Priya Nanda
+13,18,Cloud-Based Legal Research Assistant,Kunal Sinha,2026-02-03,Pending,Legal Tech Patent,Rahul Tiwari
+14,19,Centralized Research Repository,Riya Oberoi,2026-02-05,Approved,Research Patent,Ishita Mehra
+15,20,Funding Recommendation Analytics System,Arnav Kulkarni,2026-02-07,Approved,FinTech Patent,Vedant Rao
+16,21,AI Fraud Detection Infrastructure,Muskan Arora,2026-02-10,Approved,FinTech Patent,Aman Chawla
+17,22,IoT Smart Parking Optimization System,Harsh Mehta,2026-02-12,Pending,Smart City Patent,Shruti Malhotra
+18,23,Deep Learning MRI Classification Model,Sneha Bansal,2026-02-15,Approved,Healthcare Patent,Kunal Sinha
+19,24,Industrial Carbon Monitoring Platform,Parth Suri,2026-02-17,Approved,Environmental Patent,Riya Oberoi
+20,25,Automated Recruitment Recommendation System,Rachit Nair,2026-02-20,Approved,HR Tech Patent,Arnav Kulkarni
+21,26,Research Analytics Visualization Engine,Aarav Deshmukh,2026-02-22,Approved,Software Patent,Muskan Arora
+22,27,AI-Controlled Warehouse Robotics,Diya Kapoor,2026-02-24,Approved,Robotics Patent,Harsh Mehta
+23,28,Real-Time Public Transport Optimization,Manav Bedi,2026-02-27,Approved,Transportation Patent,Sneha Bansal
+24,29,Voice-Enabled Banking Assistant,Tarun Saxena,2026-03-01,Pending,FinTech Patent,Parth Suri
+25,30,AI Drug Compound Prediction Framework,Niharika Joshi,2026-03-03,Approved,Healthcare Patent,Rachit Nair
+26,31,Precision Farming Machine Learning Model,Krish Arora,2026-03-05,Pending,Agriculture Patent,Aarav Deshmukh
+27,32,Startup Incubation Management Platform,Simran Ahuja,2026-03-07,Approved,Startup Patent,Diya Kapoor
+28,33,Face Recognition Attendance Monitoring,Rudra Bhat,2026-03-10,Approved,Education Patent,Manav Bedi
+29,34,Climate Forecasting Neural Network Model,Anika Mehta,2026-03-12,Approved,Environmental Patent,Tarun Saxena
+30,36,Secure Digital Healthcare Record System,Reyansh Sood,2026-03-15,Approved,Healthcare Patent,Niharika Joshi
+31,37,Energy Consumption Analytics Engine,Kriti Anand,2026-03-17,Approved,Energy Patent,Krish Arora
+32,38,Scholarship Recommendation Intelligence,Samar Khanna,2026-03-20,Pending,Education Patent,Simran Ahuja
+33,39,E-Governance Workflow Automation,Aisha Menon,2026-03-22,Approved,E-Governance Patent,Rudra Bhat
+34,40,Innovation Trend Monitoring Platform,Dhruv Malhotra,2026-03-24,Approved,Innovation Patent,Anika Mehta
+35,5,AI Traffic Congestion Prediction System,Rohan Iyer,2026-03-26,Approved,Transportation Patent,Vihaan Chopra
+36,6,AI Classroom Learning Assistant,Neha Joshi,2026-03-28,Pending,Education Patent,Reyansh Sood
+37,11,Smart Water Distribution Control Platform,Karan Desai,2026-03-30,Approved,Environmental Patent,Kriti Anand
+38,16,Tourism Recommendation Intelligence Engine,Aman Yadav,2026-04-02,Rejected,Tourism Patent,Samar Khanna
+39,4,Renewable Energy Smart Grid Architecture,Arjun Patel,2026-04-05,Approved,Energy Patent,Aisha Menon
+40,2,IoT Crop Monitoring and Analytics System,Sahil Mehta,2026-04-08,Approved,Agriculture Patent,Dhruv Malhotra

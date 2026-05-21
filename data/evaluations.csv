@@ -1,0 +1,41 @@
+evaluation_id,project_id,evaluator_name,evaluation_date,score,remarks,status,review_time_days,priority_level
+1,1,Aryan Mehta,2026-01-08,91,Excellent implementation potential,Approved,3,High
+2,2,Ritika Sharma,2026-01-10,82,Requires prototype improvements,Pending,5,Medium
+3,3,Karan Malhotra,2026-01-13,88,Strong blockchain architecture,Approved,4,High
+4,4,Neha Kapoor,2026-01-15,69,Insufficient feasibility analysis,Rejected,6,Low
+5,5,Dev Arora,2026-01-17,90,Good smart city integration,Approved,2,High
+6,6,Ananya Singh,2026-01-20,81,Needs scalability testing,Pending,5,Medium
+7,7,Rohan Verma,2026-01-22,94,Highly innovative solution,Approved,3,High
+8,8,Tanvi Jain,2026-01-24,85,Strong cybersecurity use case,Approved,4,Medium
+9,9,Yash Bhatia,2026-01-27,96,Excellent robotics implementation,Approved,2,High
+10,10,Meera Sethi,2026-01-30,89,Very impactful healthcare solution,Approved,3,High
+11,11,Aditya Khurana,2026-02-02,77,Needs additional IoT validation,Pending,6,Medium
+12,12,Priya Nanda,2026-02-05,93,Excellent agricultural analytics,Approved,3,High
+13,13,Rahul Tiwari,2026-02-07,86,Well-structured IPR workflow,Approved,4,Medium
+14,14,Ishita Mehra,2026-02-10,91,Strong EV infrastructure proposal,Approved,5,High
+15,15,Vedant Rao,2026-02-12,78,Minor UI enhancements needed,Pending,4,Low
+16,16,Aman Chawla,2026-02-14,66,Tourism use case not clearly defined,Rejected,7,Low
+17,17,Shruti Malhotra,2026-02-17,97,Outstanding disaster prediction system,Approved,2,High
+18,18,Kunal Sinha,2026-02-19,83,Legal datasets need expansion,Pending,5,Medium
+19,19,Riya Oberoi,2026-02-22,88,Excellent repository structure,Approved,3,High
+20,20,Arnav Kulkarni,2026-02-24,90,Strong fintech recommendation engine,Approved,4,High
+21,21,Muskan Arora,2026-02-27,95,Very reliable fraud detection logic,Approved,2,High
+22,22,Harsh Mehta,2026-03-01,74,Parking analytics require optimization,Pending,6,Medium
+23,23,Sneha Bansal,2026-03-03,98,Exceptional medical imaging accuracy,Approved,2,High
+24,24,Parth Suri,2026-03-05,84,Environmental model is promising,Approved,5,Medium
+25,25,Rachit Nair,2026-03-07,87,Effective recruitment workflow,Approved,4,Medium
+26,26,Aarav Deshmukh,2026-03-09,89,Excellent research visualization module,Approved,3,High
+27,27,Diya Kapoor,2026-03-12,92,Warehouse robotics implementation strong,Approved,4,High
+28,28,Manav Bedi,2026-03-14,90,Transport optimization highly scalable,Approved,3,High
+29,29,Tarun Saxena,2026-03-17,81,Banking voice support needs multilingual support,Pending,5,Medium
+30,30,Niharika Joshi,2026-03-20,99,Exceptional AI drug research potential,Approved,2,High
+31,31,Krish Arora,2026-03-22,79,Farming datasets require enhancement,Pending,6,Medium
+32,32,Simran Ahuja,2026-03-24,91,Startup ecosystem management impressive,Approved,3,High
+33,33,Rudra Bhat,2026-03-27,76,Attendance model requires optimization,Pending,5,Low
+34,34,Anika Mehta,2026-03-30,97,Excellent climate forecasting research,Approved,2,High
+35,35,Vihaan Chopra,2026-04-01,83,Patent duplication logic acceptable,Approved,4,Medium
+36,36,Reyansh Sood,2026-04-04,94,Healthcare records system highly secure,Approved,3,High
+37,37,Kriti Anand,2026-04-06,88,Energy tracking dashboard effective,Approved,4,Medium
+38,38,Samar Khanna,2026-04-08,75,Scholarship recommendations need tuning,Pending,5,Low
+39,39,Aisha Menon,2026-04-11,93,Strong governance workflow implementation,Approved,3,High
+40,40,Dhruv Malhotra,2026-04-14,92,Innovation analytics platform highly scalable,Approved,2,High

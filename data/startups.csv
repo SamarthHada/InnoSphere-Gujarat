@@ -1,0 +1,41 @@
+startup_id,startup_name,founder_name,sector,funding_stage,funding_received,employee_count,incubation_status,city,registration_date,status
+1,AgroNext,Sahil Mehta,Agriculture,Seed,2500000,18,Incubated,Ahmedabad,2026-01-04,Active
+2,MediAI Solutions,Riya Shah,Healthcare,Series A,7500000,42,Incubated,Surat,2026-01-06,Active
+3,GreenVolt Energy,Arjun Patel,Energy,Seed,3100000,25,Incubated,Vadodara,2026-01-09,Active
+4,SecureNetX,Dev Khanna,Cybersecurity,Pre-Seed,900000,10,Pending,Rajkot,2026-01-11,Active
+5,EduMind AI,Neha Joshi,Education,Series A,6800000,39,Incubated,Ahmedabad,2026-01-13,Active
+6,UrbanMove Logistics,Harsh Vora,Transportation,Seed,4200000,28,Incubated,Surat,2026-01-15,Active
+7,FinEdge Analytics,Yash Trivedi,FinTech,Series B,15000000,70,Incubated,Gandhinagar,2026-01-18,Active
+8,FoodSense Technologies,Priya Nair,FoodTech,Pre-Seed,1200000,8,Pending,Bhavnagar,2026-01-20,Active
+9,SmartFarm Robotics,Aniket Jain,Robotics,Seed,5400000,32,Incubated,Ahmedabad,2026-01-22,Active
+10,CleanWater Systems,Karan Desai,Environment,Grant,2200000,16,Incubated,Surat,2026-01-24,Active
+11,AI Legal Advisors,Sneha Kapoor,Legal Tech,Seed,3300000,21,Incubated,Vadodara,2026-01-27,Active
+12,VisionXR Labs,Manav Soni,AR/VR,Series A,9800000,55,Incubated,Ahmedabad,2026-01-30,Active
+13,QuantumPay,Rutvik Modi,FinTech,Seed,4700000,24,Incubated,Gandhinagar,2026-02-02,Active
+14,HealthBridge Systems,Ananya Rao,Healthcare,Series B,18000000,95,Incubated,Surat,2026-02-04,Active
+15,SkillBoost Academy,Aryan Shah,Education,Pre-Seed,850000,12,Pending,Rajkot,2026-02-07,Active
+16,NeoPower Grid,Vedant Kulkarni,Energy,Series A,8900000,51,Incubated,Vadodara,2026-02-09,Active
+17,TrackFleet AI,Krish Patel,Transportation,Seed,2600000,17,Incubated,Ahmedabad,2026-02-12,Active
+18,PatentFlow Systems,Tanvi Mehra,IPR,Pre-Seed,1400000,11,Pending,Gandhinagar,2026-02-15,Active
+19,CloudGov Technologies,Aditya Singh,E-Governance,Series A,7600000,44,Incubated,Ahmedabad,2026-02-18,Active
+20,ClimateVision Analytics,Shruti Bansal,Environment,Grant,3100000,19,Incubated,Surat,2026-02-20,Active
+21,AI RecruitX,Kunal Sharma,HR Tech,Seed,2500000,15,Incubated,Rajkot,2026-02-23,Active
+22,SmartBuild Infra,Nikhil Verma,Construction,Series A,12000000,63,Incubated,Vadodara,2026-02-26,Active
+23,AutoDrone Systems,Rohan Iyer,Robotics,Series B,21000000,110,Incubated,Ahmedabad,2026-03-01,Active
+24,InnoTrade Markets,Vaibhav Gupta,E-Commerce,Seed,3800000,26,Incubated,Surat,2026-03-03,Active
+25,HealthTrack AI,Ishita Kulshrestha,Healthcare,Seed,4100000,22,Incubated,Gandhinagar,2026-03-06,Active
+26,DigitalPatent Labs,Rahul Chawla,IPR,Series A,6200000,37,Incubated,Ahmedabad,2026-03-08,Active
+27,UrbanEco Mobility,Aman Yadav,Transportation,Pre-Seed,950000,9,Pending,Rajkot,2026-03-11,Active
+28,LearnSphere Tech,Namrata Jain,Education,Seed,2700000,18,Incubated,Surat,2026-03-14,Active
+29,SecureChain Systems,Parth Bhatt,Blockchain,Series A,8200000,48,Incubated,Vadodara,2026-03-16,Active
+30,AgriPredict Analytics,Deep Shah,Agriculture,Grant,2300000,16,Incubated,Ahmedabad,2026-03-19,Active
+31,EnergyPulse Solutions,Yug Sinha,Energy,Seed,3600000,23,Incubated,Gandhinagar,2026-03-21,Active
+32,SmartRetail Vision,Ritika Arora,RetailTech,Series A,7300000,41,Incubated,Ahmedabad,2026-03-24,Active
+33,FinSecure Labs,Harshit Malhotra,FinTech,Series B,17000000,88,Incubated,Surat,2026-03-27,Active
+34,FutureMeds AI,Muskan Tiwari,Healthcare,Series A,9600000,57,Incubated,Vadodara,2026-03-30,Active
+35,InnovateX Hub,Jay Solanki,Innovation,Grant,2800000,20,Incubated,Ahmedabad,2026-04-02,Active
+36,GreenLoop Recycling,Tarun Goyal,Environment,Seed,1900000,14,Incubated,Rajkot,2026-04-05,Active
+37,StartupSync Platform,Samarth Hada,Startup,Series A,6500000,35,Incubated,Indore,2026-04-08,Active
+38,SmartPatent Assist,Aarohi Menon,IPR,Pre-Seed,1100000,7,Pending,Gandhinagar,2026-04-10,Active
+39,VisionGrid Analytics,Rachit Saxena,Data Analytics,Series A,8700000,46,Incubated,Ahmedabad,2026-04-12,Active
+40,NextGen Robotics,Vivan Batra,Robotics,Series B,25000000,130,Incubated,Surat,2026-04-15,Active

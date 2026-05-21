@@ -1,0 +1,16 @@
+collaboration_id,institution_1,institution_2,project_title,domain,collaboration_start,status
+1,IIT Gandhinagar,Nirma University,AI Healthcare Diagnosis,Healthcare,2026-01-10,Active
+2,SVVV Indore,DAIICT,Research Analytics Platform,Research,2026-01-12,Active
+3,PDEU,SVNIT Surat,Renewable Energy Grid,Energy,2026-01-15,Active
+4,Ahmedabad University,Gujarat Technological University,Innovation Monitoring System,Innovation,2026-01-18,Active
+5,DAIICT,IIT Bombay,Cyber Threat Detection,Cybersecurity,2026-01-22,Active
+6,Nirma University,IISc Bangalore,AI Drug Discovery,Healthcare,2026-01-25,Active
+7,SVNIT Surat,Manipal Institute of Technology,Robotics Automation Platform,Robotics,2026-01-28,Active
+8,CEPT University,Gujarat University,Smart City Transport System,Transportation,2026-02-01,Active
+9,Parul University,Amity University,Healthcare AI Analytics,Healthcare,2026-02-04,Active
+10,DAIICT,SRM University,Cloud Research Infrastructure,Cloud Computing,2026-02-07,Active
+11,IIT Delhi,IIT Bombay,Climate Forecasting Neural Networks,Environment,2026-02-10,Active
+12,SVVV Indore,Chandigarh University,Startup Ecosystem Platform,Startup,2026-02-12,Active
+13,Ahmedabad University,PDEU,Energy Consumption Analytics,Energy,2026-02-15,Active
+14,Gujarat University,Nirma University,Patent Similarity Detection,IPR,2026-02-18,Active
+15,IISc Bangalore,IIT Gandhinagar,Disaster Prediction Analytics,Disaster Management,2026-02-20,Active

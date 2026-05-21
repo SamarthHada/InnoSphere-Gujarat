@@ -1,0 +1,221 @@
+{% extends "base.html" %}
+
+{% block title %}Research Submission | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-research-form{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+  <div class="container page-banner-grid">
+    <div>
+      <div class="kicker">Research Intake</div>
+      <h1>A multi-step submission flow for research projects and paper uploads.</h1>
+      <p>
+        Capture project basics, funding context and the supporting research paper in a guided flow that is easier to complete and easier to review.
+      </p>
+
+      <div class="hero-meta">
+        <span class="meta-pill">3-step guided form</span>
+        <span class="meta-pill">Client-side validation</span>
+        <span class="meta-pill">PDF drag and drop</span>
+      </div>
+    </div>
+
+    <div class="banner-actions">
+      <a href="/dashboard" class="btn btn-secondary">Back to Dashboard</a>
+      <a href="/ipr" class="btn btn-primary">Review IPR</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container form-layout">
+    <aside class="form-aside research-aside">
+      <div class="kicker">Submission Flow</div>
+      <h2>What happens after submission.</h2>
+      <p>The record is stored as a pending project, then shown in the dashboard for approval and analytics.</p>
+
+      <ul class="workflow-list">
+        <li>
+          <strong>1. Capture basics</strong>
+          Title and domain are collected first so users stay focused on the project identity.
+        </li>
+        <li>
+          <strong>2. Add ownership and funding</strong>
+          Researcher and budget context are entered in the next step.
+        </li>
+        <li>
+          <strong>3. Attach the paper</strong>
+          Drag and drop a PDF research paper or browse from the device.
+        </li>
+      </ul>
+
+      <div class="note-card">
+        <strong>Tip for users</strong>
+        Keep the title specific, the description concise, and attach a PDF only when it adds real context for the reviewer.
+      </div>
+
+      {% if form_error %}
+      <div class="form-alert" role="alert">
+        {{ form_error }}
+      </div>
+      {% endif %}
+    </aside>
+
+    <div class="form-card research-wizard-card">
+      <div class="wizard-header">
+        <div>
+          <div class="kicker">Project Details</div>
+          <h2>Research Submission Form</h2>
+          <p>Move through the steps below to create a new project record.</p>
+        </div>
+
+        <div class="wizard-meta">
+          <span class="wizard-chip">Step wizard</span>
+          <span class="wizard-chip">Pending status</span>
+        </div>
+      </div>
+
+      <div class="wizard-progress" aria-hidden="true">
+        <span class="wizard-progress-bar" id="wizardProgressBar"></span>
+      </div>
+
+      <div class="wizard-steps" id="wizardSteps">
+        <button type="button" class="wizard-step is-active" data-step="1">
+          <strong>1</strong>
+          <span>Basics</span>
+        </button>
+        <button type="button" class="wizard-step" data-step="2">
+          <strong>2</strong>
+          <span>Ownership</span>
+        </button>
+        <button type="button" class="wizard-step" data-step="3">
+          <strong>3</strong>
+          <span>Paper & review</span>
+        </button>
+      </div>
+
+      <form
+        method="POST"
+        action="/submit-research"
+        enctype="multipart/form-data"
+        class="research-wizard"
+        id="researchWizard"
+        novalidate
+      >
+        <div class="research-wizard-grid">
+          <div class="wizard-main">
+            <div class="wizard-pane is-active" data-step-pane="1">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="title">Project Title</label>
+                  <input id="title" type="text" name="title" required minlength="3" maxlength="255" placeholder="Example: Smart Water Quality Monitoring">
+                  <span class="field-hint">Use a title that clearly describes the research focus.</span>
+                </div>
+
+                <div class="field">
+                  <label for="domain">Research Domain</label>
+                  <select id="domain" name="domain" required>
+                    <option value="">Choose a domain</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Healthcare</option>
+                    <option>Cybersecurity</option>
+                    <option>FinTech</option>
+                    <option>Robotics</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-pane" data-step-pane="2">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="researcher">Researcher Name</label>
+                  <input id="researcher" type="text" name="researcher" required minlength="3" maxlength="255" placeholder="Enter the lead researcher name">
+                </div>
+
+                <div class="field">
+                  <label for="funding">Funding Required</label>
+                  <input id="funding" type="number" name="funding" min="0" step="1" placeholder="0">
+                  <span class="field-hint">Optional, but useful for planning and review.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="wizard-pane" data-step-pane="3">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="description">Project Description</label>
+                  <textarea id="description" name="description" rows="7" maxlength="2000" required placeholder="Summarize the objective, approach and expected impact."></textarea>
+                  <span class="field-hint">A concise summary helps reviewers understand the scope quickly.</span>
+                </div>
+
+                <div class="field">
+                  <label>Research Paper Upload</label>
+                  <div class="dropzone" id="paperDropzone">
+                    <input id="paper_file" name="paper_file" type="file" accept=".pdf,application/pdf" hidden>
+                    <div class="dropzone-icon">PDF</div>
+                    <div class="dropzone-copy">
+                      <strong>Drop research paper here</strong>
+                      <p>PDF only. Drag and drop or browse to attach supporting material.</p>
+                    </div>
+                    <button class="btn btn-secondary" type="button" id="browsePaper">Browse Files</button>
+                  </div>
+                  <div class="file-pill" id="filePreview" hidden></div>
+                  <span class="field-hint">The file will be saved to the upload folder when the submission is sent.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="wizard-summary">
+            <div class="summary-card">
+              <span class="sidebar-eyebrow">Live Summary</span>
+              <h3 id="summaryTitle">Project title pending</h3>
+              <ul class="summary-list compact">
+                <li>
+                  <strong>Domain</strong>
+                  <span id="summaryDomain">Choose a domain</span>
+                </li>
+                <li>
+                  <strong>Researcher</strong>
+                  <span id="summaryResearcher">Add researcher name</span>
+                </li>
+                <li>
+                  <strong>Funding</strong>
+                  <span id="summaryFunding">Not specified</span>
+                </li>
+                <li>
+                  <strong>Attachment</strong>
+                  <span id="summaryFile">No PDF selected</span>
+                </li>
+              </ul>
+            </div>
+
+            <div class="summary-card summary-card-soft">
+              <span class="sidebar-eyebrow">Checklist</span>
+              <ul class="summary-checklist">
+                <li id="checkTitle">Title</li>
+                <li id="checkDomain">Domain</li>
+                <li id="checkResearcher">Researcher</li>
+                <li id="checkDescription">Description</li>
+                <li id="checkAttachment">PDF upload</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+
+        <div class="wizard-footer">
+          <button type="button" class="btn btn-ghost" id="prevStep" disabled>Back</button>
+          <div class="wizard-footer-copy" id="wizardFooterCopy">Step 1 of 3</div>
+          <button type="button" class="btn btn-secondary" id="nextStep">Continue</button>
+          <button type="submit" class="btn btn-primary" id="submitResearch" hidden>Submit Research</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/research_form.js') }}"></script>
+{% endblock %}

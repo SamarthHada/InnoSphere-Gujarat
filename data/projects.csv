@@ -1,0 +1,41 @@
+project_id,title,domain,description,submitted_by,submission_date,status,funding_required,innovation_score,project_stage
+1,AI Healthcare Diagnosis System,Healthcare,AI-based disease prediction system,101,2026-01-05,Approved,1200000,91,Deployment
+2,Smart Agriculture Monitoring,Agriculture,IoT-based crop monitoring solution,102,2026-01-07,Pending,800000,84,Prototype
+3,Blockchain Voting Platform,Blockchain,Secure blockchain voting application,103,2026-01-10,Approved,1500000,89,Development
+4,Renewable Energy Grid,Energy,Smart renewable energy management,104,2026-01-12,Rejected,950000,72,Ideation
+5,AI Traffic Prediction,Smart City,Traffic congestion prediction using AI,105,2026-01-15,Approved,700000,88,Deployment
+6,Virtual Learning Assistant,Education,AI assistant for digital classrooms,106,2026-01-18,Pending,650000,81,Development
+7,Smart Waste Management,Environment,Automated waste segregation system,107,2026-01-20,Approved,1100000,93,Deployment
+8,Cyber Threat Detection,Cybersecurity,AI cybersecurity monitoring tool,108,2026-01-22,Pending,1300000,86,Prototype
+9,Autonomous Delivery Robot,Robotics,Robot for urban package delivery,109,2026-01-25,Approved,2000000,95,Development
+10,AI Mental Health Assistant,Healthcare,Emotion-aware chatbot for mental health,110,2026-01-28,Approved,1000000,90,Deployment
+11,Smart Water Distribution,Environment,IoT-based smart water control system,111,2026-02-01,Pending,780000,80,Prototype
+12,Drone Crop Surveillance,Agriculture,Drone imaging for crop analytics,112,2026-02-04,Approved,1700000,92,Deployment
+13,Digital Patent Management,IPR,Patent workflow automation platform,113,2026-02-06,Approved,600000,85,Development
+14,Electric Vehicle Charging Network,Energy,EV charging infrastructure platform,114,2026-02-08,Pending,2500000,94,Prototype
+15,AI Resume Analyzer,HR Tech,Automated candidate screening platform,115,2026-02-10,Approved,450000,79,Deployment
+16,Smart Tourism Portal,Tourism,Digital tourism recommendation engine,116,2026-02-12,Rejected,550000,68,Ideation
+17,Disaster Alert Prediction System,Disaster Management,AI flood and disaster prediction,117,2026-02-15,Approved,1900000,96,Deployment
+18,Cloud-Based Legal Assistant,Legal Tech,AI-powered legal document assistant,118,2026-02-17,Pending,870000,82,Development
+19,Digital Research Repository,Research,Centralized research storage platform,119,2026-02-20,Approved,980000,87,Deployment
+20,Startup Funding Recommendation,FinTech,Funding recommendation analytics system,120,2026-02-22,Approved,1450000,91,Development
+21,AI Fraud Detection,FinTech,AI-based fraud transaction monitoring,121,2026-02-25,Approved,1600000,93,Deployment
+22,Smart Parking System,Smart City,IoT-enabled parking optimization,122,2026-02-27,Pending,720000,78,Prototype
+23,Medical Image Classification,Healthcare,Deep learning for MRI classification,123,2026-03-01,Approved,1800000,95,Deployment
+24,Carbon Emission Tracker,Environment,Industrial carbon monitoring platform,124,2026-03-03,Pending,980000,84,Development
+25,AI-Powered Recruitment Portal,HR Tech,Smart recruitment recommendation system,125,2026-03-05,Approved,620000,86,Deployment
+26,Automated Research Analytics,Research,Research publication analytics platform,126,2026-03-07,Approved,1250000,89,Development
+27,Robotic Warehouse Automation,Robotics,AI-controlled warehouse robotics,127,2026-03-10,Pending,3000000,97,Prototype
+28,Smart Public Transport System,Transportation,Real-time public transport optimization,128,2026-03-12,Approved,2100000,90,Deployment
+29,Voice-Based Banking Assistant,FinTech,Speech-enabled banking chatbot,129,2026-03-15,Approved,730000,83,Development
+30,AI Drug Discovery Platform,Healthcare,Drug compound prediction using AI,130,2026-03-18,Approved,3500000,99,Research
+31,Precision Farming Analytics,Agriculture,ML-based farming productivity platform,131,2026-03-20,Pending,870000,82,Prototype
+32,Digital Startup Ecosystem,Startup,Startup incubation management system,132,2026-03-22,Approved,1420000,91,Deployment
+33,Smart Attendance Monitoring,Education,Face recognition attendance platform,133,2026-03-25,Approved,500000,77,Deployment
+34,AI Climate Forecasting,Environment,Climate prediction using neural networks,134,2026-03-28,Approved,2750000,96,Research
+35,Patent Similarity Detector,IPR,AI-based patent duplication checker,135,2026-03-30,Pending,650000,80,Development
+36,Digital Healthcare Records,Healthcare,Secure patient records management,136,2026-04-02,Approved,1850000,94,Deployment
+37,Smart Energy Consumption Tracker,Energy,Real-time energy analytics platform,137,2026-04-04,Approved,950000,88,Development
+38,AI Scholarship Recommendation,Education,Student scholarship matching system,138,2026-04-06,Pending,430000,76,Prototype
+39,Secure E-Governance Portal,E-Governance,Digital governance workflow platform,139,2026-04-09,Approved,2200000,92,Deployment
+40,AI-Based Innovation Monitoring,Innovation,Innovation trend analytics platform,140,2026-04-12,Approved,1600000,90,Deployment

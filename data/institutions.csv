@@ -1,0 +1,41 @@
+institution_id,institution_name,city,state,research_focus,ranking,total_projects,total_researchers,startup_collaborations
+1,Indian Institute of Technology Gandhinagar,Gandhinagar,Gujarat,Artificial Intelligence,1,145,320,42
+2,Nirma University,Ahmedabad,Gujarat,Data Science,2,132,280,38
+3,Pandit Deendayal Energy University,Gandhinagar,Gujarat,Energy Systems,3,118,250,35
+4,DAIICT,Gandhinagar,Gujarat,Cybersecurity,4,104,210,28
+5,SVNIT Surat,Surat,Gujarat,Robotics,5,98,195,24
+6,Ahmedabad University,Ahmedabad,Gujarat,Innovation Management,6,89,175,22
+7,Gujarat Technological University,Ahmedabad,Gujarat,Smart City Solutions,7,120,300,40
+8,Dharmsinh Desai University,Nadiad,Gujarat,Healthcare Technology,8,84,162,18
+9,MS University Vadodara,Vadodara,Gujarat,Environmental Science,9,76,155,16
+10,CEPT University,Ahmedabad,Gujarat,Urban Planning,10,68,140,20
+11,Charusat University,Anand,Gujarat,Machine Learning,11,73,148,19
+12,Silver Oak University,Ahmedabad,Gujarat,Cloud Computing,12,65,135,14
+13,Ganpat University,Mehsana,Gujarat,Agriculture Technology,13,70,142,17
+14,RK University,Rajkot,Gujarat,Startup Innovation,14,61,128,13
+15,Marwadi University,Rajkot,Gujarat,Blockchain Systems,15,59,120,11
+16,LDRP Institute of Technology,Gandhinagar,Gujarat,IoT Research,16,55,118,10
+17,Parul University,Vadodara,Gujarat,Healthcare AI,17,88,176,25
+18,Navrachana University,Vadodara,Gujarat,Data Analytics,18,52,105,9
+19,Sankalchand Patel University,Visnagar,Gujarat,Renewable Energy,19,49,98,8
+20,Indus University,Ahmedabad,Gujarat,Smart Infrastructure,20,58,112,12
+21,Atmiya University,Rajkot,Gujarat,Automation Systems,21,47,96,7
+22,CVM University,Vallabh Vidyanagar,Gujarat,Research Analytics,22,53,101,10
+23,Rai University,Ahmedabad,Gujarat,Digital Governance,23,45,88,6
+24,Karnavati University,Gandhinagar,Gujarat,Legal Tech,24,50,93,8
+25,ITM Vocational University,Vadodara,Gujarat,Startup Ecosystems,25,44,85,7
+26,Gujarat University,Ahmedabad,Gujarat,Deep Learning,26,128,290,36
+27,Sardar Patel University,Vallabh Vidyanagar,Gujarat,Climate Research,27,92,188,23
+28,Shree Swaminarayan Institute,Gandhinagar,Gujarat,AI Research,28,40,82,5
+29,Indrashil University,Kadi,Gujarat,Industrial Automation,29,38,79,4
+30,Sigma University,Vadodara,Gujarat,Digital Transformation,30,36,75,4
+31,SVVV Indore,Indore,Madhya Pradesh,Artificial Intelligence,31,115,260,30
+32,IIT Bombay,Mumbai,Maharashtra,Advanced Computing,32,210,450,60
+33,IIT Delhi,New Delhi,Delhi,AI and Robotics,33,240,500,72
+34,IISc Bangalore,Bangalore,Karnataka,Scientific Research,34,260,550,80
+35,BITS Pilani,Pilani,Rajasthan,Innovation Systems,35,185,390,52
+36,VIT Vellore,Vellore,Tamil Nadu,Cloud and AI,36,175,360,48
+37,Manipal Institute of Technology,Manipal,Karnataka,Healthcare Innovation,37,160,340,45
+38,Amity University,Noida,Uttar Pradesh,FinTech Research,38,140,300,40
+39,SRM University,Chennai,Tamil Nadu,Data Engineering,39,150,320,43
+40,Chandigarh University,Chandigarh,Punjab,Startup Incubation,40,130,285,37

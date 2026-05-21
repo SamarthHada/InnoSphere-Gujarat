@@ -1,0 +1,290 @@
+{% extends "base.html" %}
+
+{% block title %}Startup Dashboard | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-startups{% endblock %}
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+  <div class="container page-banner-grid">
+    <div>
+      <div class="kicker">Startup Ecosystem</div>
+      <h1>Track startup growth, funding and incubation in one operational screen.</h1>
+      <p>
+        A modern startup module should show the portfolio, the analytics and the intake flow together. This page does that without requiring a separate admin tool.
+      </p>
+
+      <div class="hero-meta">
+        <span class="meta-pill">Live startup cards</span>
+        <span class="meta-pill">Funding analytics</span>
+        <span class="meta-pill">Incubation tracking</span>
+      </div>
+    </div>
+
+    <div class="banner-actions">
+      <a href="/dashboard" class="btn btn-secondary">Dashboard</a>
+      <a href="/research-form" class="btn btn-primary">Research Module</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="startupRoot">
+  <div class="container startup-shell">
+    <div class="startup-kpi-grid">
+      <article class="kpi-card">
+        <span class="eyebrow">Startups</span>
+        <h3 id="totalStartups">0</h3>
+        <p>Total startup records loaded.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Active</span>
+        <h3 id="activeStartups">0</h3>
+        <p>Startups in active status.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Avg Funding</span>
+        <h3 id="avgFunding">INR 0</h3>
+        <p>Average capital raised across the list.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Cities</span>
+        <h3 id="cityCount">0</h3>
+        <p>Unique cities represented in the portfolio.</p>
+      </article>
+    </div>
+
+    <div class="startup-overview-grid">
+      <aside class="panel startup-analytics-panel">
+        <div class="panel-header">
+          <div>
+            <div class="kicker">Analytics Snapshot</div>
+            <h2 class="panel-title">Startup ecosystem analytics</h2>
+            <p class="panel-subtitle">
+              Sector mix, funding stage and incubation signals update from the live dataset.
+            </p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="startup-chart-grid">
+            <article class="chart-card startup-chart-card">
+              <div class="chart-card-head">
+                <div>
+                  <span class="chart-kicker">Sector mix</span>
+                  <h3>Sector distribution</h3>
+                </div>
+              </div>
+              <canvas id="sectorChart"></canvas>
+            </article>
+
+            <article class="chart-card startup-chart-card">
+              <div class="chart-card-head">
+                <div>
+                  <span class="chart-kicker">Funding mix</span>
+                  <h3>Funding by stage</h3>
+                </div>
+              </div>
+              <canvas id="fundingChart"></canvas>
+            </article>
+          </div>
+
+          <div class="startup-widget-grid">
+            <div class="startup-widget">
+              <span class="sidebar-eyebrow">Incubation</span>
+              <strong id="incubatingCount">0</strong>
+              <span>Startups in incubation or acceleration.</span>
+            </div>
+
+            <div class="startup-widget">
+              <span class="sidebar-eyebrow">Top Sector</span>
+              <strong id="topSector">All sectors</strong>
+              <span>Most frequent sector in the current portfolio.</span>
+            </div>
+
+            <div class="startup-widget">
+              <span class="sidebar-eyebrow">Top City</span>
+              <strong id="topCity">All cities</strong>
+              <span>Most represented city in the current portfolio.</span>
+            </div>
+
+            <div class="startup-widget">
+              <span class="sidebar-eyebrow">Status</span>
+              <strong id="portfolioStatus">Ready</strong>
+              <span>Startup data loaded into the module.</span>
+            </div>
+          </div>
+
+          <div class="summary-card summary-card-soft startup-summary-card">
+            <span class="sidebar-eyebrow">Quick notes</span>
+            <ul class="summary-list compact startup-summary-list">
+              <li><strong>Sector breadth</strong><span>See where the portfolio is clustered</span></li>
+              <li><strong>Funding awareness</strong><span>Track stage and capital in one place</span></li>
+              <li><strong>Incubation status</strong><span>Spot startups that need follow-up</span></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <div class="startup-main-column">
+        <div class="panel startup-form-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Startup Intake</div>
+              <h2 class="panel-title">Register startup</h2>
+              <p class="panel-subtitle">Use the same API the current backend already exposes, but with a cleaner guided form.</p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="formStatus">Ready to add startups</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <form id="startupForm" class="startup-form">
+              <div class="field-grid two-col">
+                <div class="field">
+                  <label for="startup_name">Startup Name</label>
+                  <input type="text" id="startup_name" placeholder="Startup Name" required minlength="2" maxlength="150">
+                </div>
+
+                <div class="field">
+                  <label for="founder_name">Founder Name</label>
+                  <input type="text" id="founder_name" placeholder="Founder Name" required minlength="2" maxlength="120">
+                </div>
+
+                <div class="field">
+                  <label for="sector">Sector</label>
+                  <select id="sector" required>
+                    <option value="">Choose sector</option>
+                    <option>AI</option>
+                    <option>Healthcare</option>
+                    <option>FinTech</option>
+                    <option>Energy</option>
+                    <option>Robotics</option>
+                    <option>SaaS</option>
+                    <option>Climate</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="funding_stage">Funding Stage</label>
+                  <select id="funding_stage">
+                    <option value="">Choose stage</option>
+                    <option>Pre-Seed</option>
+                    <option>Seed</option>
+                    <option>Series A</option>
+                    <option>Series B</option>
+                    <option>Growth</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="funding_received">Funding Received</label>
+                  <input type="number" id="funding_received" placeholder="Funding Received" min="0" step="1">
+                </div>
+
+                <div class="field">
+                  <label for="employee_count">Employee Count</label>
+                  <input type="number" id="employee_count" placeholder="Employee Count" min="0" step="1">
+                </div>
+
+                <div class="field">
+                  <label for="incubation_status">Incubation Status</label>
+                  <select id="incubation_status">
+                    <option value="">Choose status</option>
+                    <option>Incubating</option>
+                    <option>Accelerating</option>
+                    <option>Graduated</option>
+                    <option>Active</option>
+                    <option>Paused</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="city">City</label>
+                  <input type="text" id="city" placeholder="City" maxlength="100">
+                </div>
+              </div>
+
+              <div class="field-actions">
+                <button type="submit" class="btn btn-primary">Register Startup</button>
+                <button type="reset" class="btn btn-ghost" id="resetStartupForm">Reset</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="panel startup-filter-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Portfolio View</div>
+              <h2 class="panel-title">Startup cards</h2>
+              <p class="panel-subtitle">Search and filter the portfolio by sector or incubation status.</p>
+            </div>
+          </div>
+
+          <div class="panel-body startup-filter-body">
+            <div class="toolbar-grid startup-toolbar">
+              <label class="toolbar-field">
+                <span>Search startups</span>
+                <input id="startupSearch" class="search-input" type="search" placeholder="Name, founder, city or sector">
+              </label>
+
+              <label class="toolbar-field">
+                <span>Status</span>
+                <select id="statusFilter" class="select-input">
+                  <option value="all">All statuses</option>
+                </select>
+              </label>
+
+              <label class="toolbar-field">
+                <span>Sort</span>
+                <select id="sortFilter" class="select-input">
+                  <option value="recent">Latest first</option>
+                  <option value="funding">Highest funding</option>
+                  <option value="name">Name A-Z</option>
+                  <option value="city">City A-Z</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="dashboard-filters" id="sectorFilters" aria-label="Sector filters"></div>
+          </div>
+        </div>
+
+        <div class="panel startup-cards-panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Startup Cards</div>
+              <h2 class="panel-title">Live startup portfolio</h2>
+              <p class="panel-subtitle">Each card shows founder, funding, stage and incubation state at a glance.</p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="cardStatus">Loading startups</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div id="startupCards" class="startup-card-grid"></div>
+            <div id="startupEmptyState" class="dashboard-empty" hidden>
+              <h3>No startups match the current filters</h3>
+              <p>Try clearing search or switching the sector/status filters.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="toast" class="toast" aria-live="polite"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/startup.js') }}"></script>
+{% endblock %}

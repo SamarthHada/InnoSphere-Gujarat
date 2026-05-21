@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Research Submitted | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-research-success{% endblock %}
+
+{% block content %}
+<section class="auth-shell">
+  <div class="auth-card success-card">
+    <div class="kicker">Submission Complete</div>
+    <h1>Research submitted successfully.</h1>
+    <p>
+      The project has been stored as a pending record and will appear in the dashboard for review and analytics.
+    </p>
+
+    <div class="success-grid">
+      <div class="success-item">
+        <span>Project title</span>
+        <strong>{{ title }}</strong>
+      </div>
+      <div class="success-item">
+        <span>Domain</span>
+        <strong>{{ domain }}</strong>
+      </div>
+      <div class="success-item">
+        <span>Researcher</span>
+        <strong>{{ researcher }}</strong>
+      </div>
+      <div class="success-item">
+        <span>Funding</span>
+        <strong>{% if funding is number %}INR {{ funding|round(0) }}{% else %}{{ funding }}{% endif %}</strong>
+      </div>
+      <div class="success-item">
+        <span>Attachment</span>
+        <strong>{{ attachment_name or "No PDF uploaded" }}</strong>
+      </div>
+    </div>
+
+    <div class="field-actions">
+      <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+      <a href="/research-form" class="btn btn-secondary">Submit Another</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,263 @@
+{% extends "base.html" %}
+
+{% block title %}IPR Management | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-ipr{% endblock %}
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+  <div class="container page-banner-grid">
+    <div>
+      <div class="kicker">IPR Workflow</div>
+      <h1>Review patent submissions, approval state and filing analytics in one place.</h1>
+      <p>
+        The IPR module now behaves like an operational review desk with live status badges, approval actions and analytics tied to the actual database records.
+      </p>
+
+      <div class="hero-meta">
+        <span class="meta-pill">Approval workflow</span>
+        <span class="meta-pill">Patent analytics</span>
+        <span class="meta-pill">Status badges</span>
+      </div>
+    </div>
+
+    <div class="banner-actions">
+      <a href="/dashboard" class="btn btn-secondary">Dashboard</a>
+      <a href="/startups" class="btn btn-primary">Startup Module</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="iprRoot">
+  <div class="container">
+    <div class="startup-kpi-grid">
+      <article class="kpi-card">
+        <span class="eyebrow">Applications</span>
+        <h3 id="totalIpr">0</h3>
+        <p>Total patent applications tracked.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Approval Rate</span>
+        <h3 id="approvalRate">0%</h3>
+        <p>Approved filings out of the total queue.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Under Review</span>
+        <h3 id="underReviewIpr">0</h3>
+        <p>Records currently in review.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Pending</span>
+        <h3 id="pendingIpr">0</h3>
+        <p>Applications waiting for a first pass.</p>
+      </article>
+    </div>
+
+    <div class="startup-overview-grid">
+      <div class="startup-main-column">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Patent Analytics</div>
+              <h2 class="panel-title">Review volume and filing mix</h2>
+              <p class="panel-subtitle">Use these charts to spot backlog pressure and the dominant patent categories.</p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="iprCardStatus">Loading IPR data</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="startup-chart-grid">
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">Approval state</span>
+                    <h3>Case status distribution</h3>
+                  </div>
+                </div>
+                <canvas id="statusChart"></canvas>
+              </article>
+
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">Filing type</span>
+                    <h3>Patent type mix</h3>
+                  </div>
+                </div>
+                <canvas id="typeChart"></canvas>
+              </article>
+            </div>
+
+            <div class="startup-widget-grid">
+              <div class="startup-widget">
+                <span class="sidebar-eyebrow">Approved</span>
+                <strong id="approvedIpr">0</strong>
+                <span>Applications already cleared.</span>
+              </div>
+
+              <div class="startup-widget">
+                <span class="sidebar-eyebrow">Rejected</span>
+                <strong id="rejectedIpr">0</strong>
+                <span>Applications closed with rejection.</span>
+              </div>
+
+              <div class="startup-widget">
+                <span class="sidebar-eyebrow">Review Load</span>
+                <strong id="reviewShare">0%</strong>
+                <span>Share of records in the review queue.</span>
+              </div>
+
+              <div class="startup-widget">
+                <span class="sidebar-eyebrow">Workflow</span>
+                <strong id="workflowStatus">Ready</strong>
+                <span>Live actions are available below.</span>
+              </div>
+            </div>
+
+            <div class="summary-card summary-card-soft startup-summary-card">
+              <span class="sidebar-eyebrow">Workflow notes</span>
+              <ul class="summary-list compact startup-summary-list">
+                <li><strong>Pending</strong><span>New records arrive here by default.</span></li>
+                <li><strong>Under review</strong><span>Use this state when a patent is actively being examined.</span></li>
+                <li><strong>Approved or rejected</strong><span>Finalize the approval decision from the table actions.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Patent Register</div>
+              <h2 class="panel-title">Live IPR records</h2>
+              <p class="panel-subtitle">Search applications, filter by approval status and move records through the workflow.</p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="iprTableStatus">Loading records</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="toolbar-grid startup-toolbar">
+              <label class="toolbar-field">
+                <span>Search applications</span>
+                <input id="iprSearch" class="search-input" type="search" placeholder="Patent title, applicant or type">
+              </label>
+
+              <label class="toolbar-field">
+                <span>Status</span>
+                <select id="iprStatusFilter" class="select-input">
+                  <option value="all">All statuses</option>
+                </select>
+              </label>
+
+              <label class="toolbar-field">
+                <span>Sort</span>
+                <select id="iprSortFilter" class="select-input">
+                  <option value="recent">Latest first</option>
+                  <option value="title">Title A-Z</option>
+                  <option value="status">Status A-Z</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Patent</th>
+                    <th>Applicant</th>
+                    <th>Type</th>
+                    <th>Status</th>
+                    <th>Application Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="iprTableBody"></tbody>
+              </table>
+            </div>
+
+            <div id="iprEmptyState" class="dashboard-empty" hidden>
+              <h3>No patent records match the current filters</h3>
+              <p>Try clearing the search or switch back to all statuses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="startup-analytics-panel panel">
+        <div class="panel-header">
+          <div>
+            <div class="kicker">Approval Desk</div>
+            <h2 class="panel-title">Submit or update a patent case</h2>
+            <p class="panel-subtitle">Create a new record or move an existing application through the approval workflow.</p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <form id="iprForm" class="startup-form">
+            <div class="field-grid">
+              <div class="field">
+                <label for="patent_title">Patent Title</label>
+                <input type="text" id="patent_title" placeholder="Patent title" required minlength="3" maxlength="255">
+              </div>
+
+              <div class="field">
+                <label for="applicant_name">Applicant Name</label>
+                <input type="text" id="applicant_name" placeholder="Applicant name" required minlength="3" maxlength="120">
+              </div>
+
+              <div class="field">
+                <label for="patent_type">Patent Type</label>
+                <input type="text" id="patent_type" placeholder="Utility, design, process..." required maxlength="100">
+              </div>
+
+              <div class="field">
+                <label for="approval_status">Approval Status</label>
+                <select id="approval_status" required>
+                  <option>Pending</option>
+                  <option>Under Review</option>
+                  <option>Approved</option>
+                  <option>Rejected</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-actions">
+              <button type="submit" class="btn btn-primary">Create Patent Record</button>
+              <button type="reset" class="btn btn-ghost" id="resetIprForm">Reset</button>
+            </div>
+          </form>
+
+          <div class="note-card">
+            <strong>Approval workflow</strong>
+            Use the table actions to push a record into review, approve it or mark it rejected without leaving the page.
+          </div>
+
+          <ul class="workflow-list">
+            <li><strong>Pending</strong>New filings are created in a neutral state.</li>
+            <li><strong>Under Review</strong>Use this when the legal or technical review is in progress.</li>
+            <li><strong>Approved</strong>Marks the patent as accepted and ready for follow-through.</li>
+            <li><strong>Rejected</strong>Closes the case with a negative decision.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div id="toast" class="toast" aria-live="polite"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/ipr.js') }}"></script>
+{% endblock %}

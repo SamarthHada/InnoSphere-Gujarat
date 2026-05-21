@@ -1,0 +1,41 @@
+user_id,full_name,email,password_hash,role,institution,account_status,last_login,created_at
+101,Samarth Hada,samarth@svvv.edu.in,hashed_pw_101,Admin,SVVV,Active,2026-04-15 09:15:00,2026-01-02
+102,Satyam Siloiya,satyam@svvv.edu.in,hashed_pw_102,Researcher,SVVV,Active,2026-04-14 13:20:00,2026-01-03
+103,Sambhav Jain,sambhav@svvv.edu.in,hashed_pw_103,Researcher,SVVV,Active,2026-04-15 11:00:00,2026-01-05
+104,Himangi Mantri,himangi@svvv.edu.in,hashed_pw_104,Researcher,SVVV,Active,2026-04-13 16:45:00,2026-01-06
+105,Riya Shah,riya.shah@gmail.com,hashed_pw_105,Startup Founder,Nirma University,Active,2026-04-14 10:10:00,2026-01-08
+106,Arjun Patel,arjun.patel@gmail.com,hashed_pw_106,Researcher,IIT Gandhinagar,Active,2026-04-15 08:50:00,2026-01-09
+107,Neha Joshi,neha.joshi@gmail.com,hashed_pw_107,Policy Maker,Gujarat Innovation Council,Active,2026-04-12 12:40:00,2026-01-11
+108,Dev Khanna,dev.khanna@gmail.com,hashed_pw_108,Researcher,PDEU,Active,2026-04-15 14:30:00,2026-01-13
+109,Priya Nair,priya.nair@gmail.com,hashed_pw_109,Startup Founder,Dhirubhai Ambani Institute,Active,2026-04-11 09:25:00,2026-01-14
+110,Aniket Jain,aniket.jain@gmail.com,hashed_pw_110,Researcher,SVNIT Surat,Active,2026-04-10 17:15:00,2026-01-15
+111,Karan Desai,karan.desai@gmail.com,hashed_pw_111,Researcher,IIT Bombay,Active,2026-04-14 11:05:00,2026-01-17
+112,Sneha Kapoor,sneha.kapoor@gmail.com,hashed_pw_112,Startup Founder,NIT Surat,Active,2026-04-13 15:20:00,2026-01-18
+113,Manav Soni,manav.soni@gmail.com,hashed_pw_113,Researcher,Ahmedabad University,Active,2026-04-15 10:55:00,2026-01-20
+114,Rutvik Modi,rutvik.modi@gmail.com,hashed_pw_114,Admin,Gujarat Startup Portal,Active,2026-04-12 18:30:00,2026-01-21
+115,Ananya Rao,ananya.rao@gmail.com,hashed_pw_115,Researcher,DAIICT,Active,2026-04-11 14:45:00,2026-01-23
+116,Aryan Shah,aryan.shah@gmail.com,hashed_pw_116,Startup Founder,SVVV,Active,2026-04-15 09:05:00,2026-01-25
+117,Vedant Kulkarni,vedant.k@gmail.com,hashed_pw_117,Researcher,Nirma University,Active,2026-04-14 08:20:00,2026-01-27
+118,Krish Patel,krish.patel@gmail.com,hashed_pw_118,Researcher,PDEU,Active,2026-04-13 12:15:00,2026-01-28
+119,Tanvi Mehra,tanvi.mehra@gmail.com,hashed_pw_119,Startup Founder,IIT Gandhinagar,Active,2026-04-10 16:40:00,2026-01-30
+120,Aditya Singh,aditya.singh@gmail.com,hashed_pw_120,Policy Maker,Govt Innovation Cell,Active,2026-04-15 13:35:00,2026-02-01
+121,Shruti Bansal,shruti.bansal@gmail.com,hashed_pw_121,Researcher,DAIICT,Active,2026-04-12 10:50:00,2026-02-02
+122,Kunal Sharma,kunal.sharma@gmail.com,hashed_pw_122,Researcher,NIT Surat,Active,2026-04-15 09:45:00,2026-02-04
+123,Nikhil Verma,nikhil.verma@gmail.com,hashed_pw_123,Startup Founder,Ahmedabad University,Active,2026-04-13 11:55:00,2026-02-06
+124,Rohan Iyer,rohan.iyer@gmail.com,hashed_pw_124,Researcher,SVVV,Active,2026-04-11 15:10:00,2026-02-08
+125,Vaibhav Gupta,vaibhav.gupta@gmail.com,hashed_pw_125,Startup Founder,Nirma University,Active,2026-04-14 12:05:00,2026-02-10
+126,Ishita Kulshrestha,ishita.k@gmail.com,hashed_pw_126,Researcher,PDEU,Active,2026-04-15 17:20:00,2026-02-11
+127,Rahul Chawla,rahul.chawla@gmail.com,hashed_pw_127,Researcher,IIT Gandhinagar,Active,2026-04-12 09:35:00,2026-02-13
+128,Aman Yadav,aman.yadav@gmail.com,hashed_pw_128,Startup Founder,SVNIT Surat,Active,2026-04-13 13:40:00,2026-02-15
+129,Namrata Jain,namrata.jain@gmail.com,hashed_pw_129,Researcher,DAIICT,Active,2026-04-14 16:50:00,2026-02-17
+130,Parth Bhatt,parth.bhatt@gmail.com,hashed_pw_130,Researcher,Ahmedabad University,Active,2026-04-15 18:10:00,2026-02-18
+131,Deep Shah,deep.shah@gmail.com,hashed_pw_131,Researcher,SVVV,Active,2026-04-10 10:45:00,2026-02-20
+132,Yug Sinha,yug.sinha@gmail.com,hashed_pw_132,Startup Founder,IIT Gandhinagar,Active,2026-04-11 12:20:00,2026-02-22
+133,Ritika Arora,ritika.arora@gmail.com,hashed_pw_133,Researcher,Nirma University,Active,2026-04-13 14:30:00,2026-02-24
+134,Harshit Malhotra,harshit.m@gmail.com,hashed_pw_134,Researcher,PDEU,Active,2026-04-15 08:15:00,2026-02-26
+135,Muskan Tiwari,muskan.tiwari@gmail.com,hashed_pw_135,Startup Founder,Ahmedabad University,Active,2026-04-14 11:25:00,2026-02-28
+136,Jay Solanki,jay.solanki@gmail.com,hashed_pw_136,Researcher,SVVV,Active,2026-04-15 09:55:00,2026-03-02
+137,Tarun Goyal,tarun.goyal@gmail.com,hashed_pw_137,Researcher,DAIICT,Active,2026-04-12 17:35:00,2026-03-04
+138,Aarohi Menon,aarohi.menon@gmail.com,hashed_pw_138,Startup Founder,NIT Surat,Active,2026-04-13 10:40:00,2026-03-06
+139,Rachit Saxena,rachit.saxena@gmail.com,hashed_pw_139,Researcher,IIT Gandhinagar,Active,2026-04-14 15:20:00,2026-03-08
+140,Vivan Batra,vivan.batra@gmail.com,hashed_pw_140,Admin,Gujarat Startup Portal,Active,2026-04-15 16:10:00,2026-03-10

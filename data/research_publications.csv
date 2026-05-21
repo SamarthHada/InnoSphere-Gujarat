@@ -1,0 +1,41 @@
+publication_id,project_id,paper_title,author_name,journal_name,publication_year,citations,indexed_in,domain,publication_status
+1,1,AI-Based Healthcare Diagnosis Framework,Riya Shah,International Journal of AI Research,2026,42,Scopus,Healthcare,Published
+2,2,Smart Agriculture Monitoring using IoT,Sahil Mehta,Journal of Smart Farming,2026,31,Scopus,Agriculture,Published
+3,3,Blockchain Voting Security Infrastructure,Dev Khanna,Journal of Blockchain Systems,2026,28,IEEE,Blockchain,Published
+4,5,Traffic Congestion Prediction using Deep Learning,Rohan Iyer,Transportation Analytics Review,2026,35,Scopus,Smart City,Published
+5,7,Automated Waste Segregation using AI,Sneha Kapoor,Environmental Innovation Journal,2026,26,UGC Care,Environment,Published
+6,8,Neural Network Based Cyber Threat Detection,Aniket Jain,International Cybersecurity Review,2026,47,IEEE,Cybersecurity,Published
+7,9,Urban Delivery Robotics and Navigation,Yash Bhatia,Journal of Robotics Engineering,2026,54,Scopus,Robotics,Published
+8,10,Emotion-Aware AI Mental Health Assistant,Priya Nair,Healthcare Technology Journal,2026,38,PubMed,Healthcare,Published
+9,12,Drone Analytics for Precision Farming,Arjun Patel,Smart Agriculture International,2026,33,Scopus,Agriculture,Published
+10,13,Digital Patent Workflow Optimization,Rahul Tiwari,IPR Technology Review,2026,19,UGC Care,IPR,Published
+11,14,Electric Vehicle Charging Optimization,Manav Soni,Renewable Energy Journal,2026,44,Scopus,Energy,Published
+12,15,AI Resume Screening Architecture,Vedant Rao,Human Resource Technology Review,2026,17,UGC Care,HR Tech,Published
+13,17,AI Disaster Prediction and Flood Analytics,Shruti Malhotra,Disaster Management Quarterly,2026,58,Scopus,Disaster Management,Published
+14,18,Cloud-Based Legal Research Assistant,Kunal Sinha,Legal Technology Journal,2026,21,UGC Care,Legal Tech,Published
+15,19,Centralized Digital Research Repository,Riya Oberoi,Research Systems International,2026,24,Scopus,Research,Published
+16,20,Funding Recommendation using Predictive Analytics,Arnav Kulkarni,FinTech Innovation Review,2026,37,IEEE,FinTech,Published
+17,21,Fraud Detection using Artificial Intelligence,Muskan Arora,Journal of Financial Analytics,2026,49,Scopus,FinTech,Published
+18,22,IoT Smart Parking Optimization System,Harsh Mehta,Urban Systems Journal,2026,18,UGC Care,Smart City,Published
+19,23,Deep Learning MRI Image Classification,Sneha Bansal,Medical Imaging Review,2026,61,PubMed,Healthcare,Published
+20,24,Industrial Carbon Monitoring Analytics,Parth Suri,Climate Innovation Journal,2026,27,Scopus,Environment,Published
+21,25,Automated Recruitment Recommendation System,Rachit Nair,HR Analytics International,2026,20,UGC Care,HR Tech,Published
+22,26,Research Analytics Visualization Platform,Aarav Deshmukh,Journal of Data Analytics,2026,32,IEEE,Research,Published
+23,27,Warehouse Robotics Automation using AI,Diya Kapoor,Industrial Robotics Review,2026,53,Scopus,Robotics,Published
+24,28,Public Transport Optimization Framework,Manav Bedi,Transportation Systems Journal,2026,29,Scopus,Transportation,Published
+25,29,Voice-Based Banking Assistant,Tarun Saxena,Financial Systems Journal,2026,25,IEEE,FinTech,Published
+26,30,AI Drug Discovery using Neural Networks,Niharika Joshi,Nature Computational Medicine,2026,74,Nature,Healthcare,Published
+27,31,Precision Farming Machine Learning Model,Krish Arora,Agriculture AI Journal,2026,23,Scopus,Agriculture,Published
+28,32,Startup Ecosystem Management Platform,Simran Ahuja,Innovation Systems Review,2026,16,UGC Care,Startup,Published
+29,33,Face Recognition Attendance Monitoring,Rudra Bhat,Education Technology Journal,2026,15,UGC Care,Education,Published
+30,34,Climate Forecasting using Deep Neural Networks,Anika Mehta,Climate Intelligence Review,2026,66,Nature,Environment,Published
+31,35,Patent Similarity Detection using AI,Vihaan Chopra,Journal of Patent Analytics,2026,22,Scopus,IPR,Published
+32,36,Secure Digital Healthcare Record System,Reyansh Sood,Healthcare Informatics Journal,2026,41,PubMed,Healthcare,Published
+33,37,Energy Consumption Analytics Platform,Kriti Anand,Energy Systems Review,2026,30,Scopus,Energy,Published
+34,38,Scholarship Recommendation Intelligence System,Samar Khanna,Education Research Analytics,2026,14,UGC Care,Education,Published
+35,39,E-Governance Workflow Automation Platform,Aisha Menon,Digital Governance Review,2026,36,Scopus,E-Governance,Published
+36,40,Innovation Trend Monitoring using AI,Dhruv Malhotra,Innovation Intelligence Journal,2026,39,IEEE,Innovation,Published
+37,4,Renewable Energy Smart Grid Architecture,Arjun Patel,Energy Infrastructure Journal,2026,45,Scopus,Energy,Published
+38,6,AI Classroom Learning Assistant,Neha Joshi,Journal of Smart Education,2026,19,UGC Care,Education,Published
+39,11,Smart Water Distribution Control Platform,Karan Desai,Environmental Systems Journal,2026,28,Scopus,Environment,Published
+40,16,Tourism Recommendation Intelligence Engine,Aman Yadav,Tourism Technology Review,2026,13,UGC Care,Tourism,Published

@@ -1,0 +1,21 @@
+log_id,user_id,activity_type,module,timestamp,status
+1,101,Login,Authentication,2026-04-10 09:15:00,Success
+2,102,Research Submission,Research Module,2026-04-10 10:22:00,Success
+3,103,Dashboard Access,Analytics,2026-04-10 11:10:00,Success
+4,105,Startup Registration,Startup Module,2026-04-10 11:55:00,Success
+5,110,IPR Submission,IPR Module,2026-04-10 12:30:00,Success
+6,114,Admin Approval,Admin Panel,2026-04-10 13:05:00,Success
+7,120,Analytics Export,Reports Module,2026-04-10 13:40:00,Success
+8,122,Login,Authentication,2026-04-10 14:15:00,Failed
+9,124,Research Search,Research Module,2026-04-10 14:55:00,Success
+10,126,Dashboard Access,Analytics,2026-04-10 15:30:00,Success
+11,128,Startup Registration,Startup Module,2026-04-10 16:05:00,Success
+12,130,Notification View,Notification Center,2026-04-10 16:40:00,Success
+13,132,Funding Report Download,Reports Module,2026-04-10 17:10:00,Success
+14,134,Login,Authentication,2026-04-10 17:45:00,Success
+15,136,Research Submission,Research Module,2026-04-10 18:15:00,Success
+16,138,IPR Approval,IPR Module,2026-04-10 18:40:00,Success
+17,140,System Monitoring,Admin Panel,2026-04-10 19:05:00,Success
+18,101,CSV Export,Reports Module,2026-04-10 19:35:00,Success
+19,102,Project Filter Search,Research Module,2026-04-10 20:00:00,Success
+20,114,User Management,Admin Panel,2026-04-10 20:25:00,Success

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}InnoSphere Gujarat{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head_extra %}{% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="container nav-wrap">
+        <a class="brand" href="/">
+          <span class="brand-mark">IS</span>
+          <span class="brand-copy">
+            <strong>InnoSphere Gujarat</strong>
+            <span>Research, IPR, startups and analytics</span>
+          </span>
+        </a>
+
+        <nav class="nav-links" aria-label="Primary">
+          <a href="/" class="{{ 'active' if request.path == '/' else '' }}">Home</a>
+          <a href="/dashboard" class="{{ 'active' if request.path == '/dashboard' else '' }}">Dashboard</a>
+          <a href="/research-form" class="{{ 'active' if request.path == '/research-form' else '' }}">Research</a>
+          <a href="/startups" class="{{ 'active' if request.path == '/startups' else '' }}">Startups</a>
+          <a href="/ipr" class="{{ 'active' if request.path == '/ipr' else '' }}">IPR</a>
+          <a href="/admin" class="{{ 'active' if request.path == '/admin' else '' }}">Admin</a>
+        </nav>
+
+        <a href="/login" class="btn btn-ghost btn-login">Login</a>
+      </div>
+    </header>
+
+    <main class="page-content">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>InnoSphere Gujarat</h3>
+          <p>Enhancing monitoring and management of research projects, IPR activity, innovation pipelines and startup support across Gujarat.</p>
+        </div>
+
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/research-form">Research</a></li>
+            <li><a href="/startups">Startups</a></li>
+            <li><a href="/ipr">IPR</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>support@innosphere.com</li>
+            <li>+91 9876543210</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="copyright">&copy; 2026 InnoSphere Gujarat. All rights reserved.</p>
+    </footer>
+  </div>
+
+  {% block scripts %}{% endblock %}
+</body>
+
+</html>

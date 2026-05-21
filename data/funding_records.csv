@@ -1,0 +1,21 @@
+funding_id,project_id,startup_id,funding_source,amount,sanction_date,funding_status
+1,1,,Gujarat Innovation Fund,1200000,2026-01-10,Approved
+2,2,,AgriTech Development Board,800000,2026-01-12,Approved
+3,3,,Digital India Initiative,1500000,2026-01-14,Approved
+4,,1,Startup Gujarat Mission,2500000,2026-01-16,Approved
+5,,2,Healthcare Innovation Council,7500000,2026-01-18,Approved
+6,7,,Environmental Sustainability Fund,1100000,2026-01-20,Approved
+7,,7,FinTech Startup Accelerator,15000000,2026-01-22,Approved
+8,9,,Robotics Advancement Board,2000000,2026-01-24,Approved
+9,10,,Healthcare Research Council,1000000,2026-01-26,Approved
+10,,12,XR Innovation Program,9800000,2026-01-28,Approved
+11,17,,Disaster Management Authority,1900000,2026-02-01,Approved
+12,,14,National Healthcare Startup Grant,18000000,2026-02-03,Approved
+13,20,,Financial Analytics Mission,1450000,2026-02-05,Approved
+14,,23,Advanced Robotics Mission,21000000,2026-02-07,Approved
+15,30,,AI Medical Research Initiative,3500000,2026-02-10,Approved
+16,,33,FinSecure Growth Fund,17000000,2026-02-12,Approved
+17,34,,Climate Intelligence Research Board,2750000,2026-02-14,Approved
+18,,40,Robotics Scaleup Program,25000000,2026-02-16,Approved
+19,36,,Digital Health Infrastructure Scheme,1850000,2026-02-18,Approved
+20,39,,E-Governance Modernization Fund,2200000,2026-02-20,Approved

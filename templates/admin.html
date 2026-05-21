@@ -1,0 +1,222 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Control Panel | InnoSphere Gujarat{% endblock %}
+{% block body_class %}page-admin{% endblock %}
+{% block head_extra %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+
+{% block content %}
+<section class="page-banner">
+  <div class="container page-banner-grid">
+    <div>
+      <div class="kicker">Admin Panel</div>
+      <h1>Track the whole platform with analytics, health signals and live activity.</h1>
+      <p>
+        This view turns the admin area into an operational control center for research, startups and IPR monitoring rather than a static settings page.
+      </p>
+
+      <div class="hero-meta">
+        <span class="meta-pill">Analytics overview</span>
+        <span class="meta-pill">Activity monitoring</span>
+        <span class="meta-pill">System health</span>
+      </div>
+    </div>
+
+    <div class="banner-actions">
+      <button class="btn btn-primary" type="button" onclick="generateReport()">Generate CSV Report</button>
+      <a href="/dashboard" class="btn btn-secondary">Dashboard</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="adminRoot">
+  <div class="container">
+    <div class="startup-kpi-grid">
+      <article class="kpi-card">
+        <span class="eyebrow">Projects</span>
+        <h3 id="totalProjects">0</h3>
+        <p>Total research projects in the platform.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Startups</span>
+        <h3 id="totalStartups">0</h3>
+        <p>Startup records tracked by the system.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">IPR</span>
+        <h3 id="totalIpr">0</h3>
+        <p>Patent applications managed in the queue.</p>
+      </article>
+
+      <article class="kpi-card">
+        <span class="eyebrow">Users</span>
+        <h3 id="totalUsers">0</h3>
+        <p>Registered platform users and reviewers.</p>
+      </article>
+    </div>
+
+    <div class="startup-overview-grid">
+      <div class="startup-main-column">
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Analytics Overview</div>
+              <h2 class="panel-title">Platform performance at a glance</h2>
+              <p class="panel-subtitle">Monitor research status, startup spread and IPR approval flow without switching modules.</p>
+            </div>
+            <div class="table-status-pill">
+              <span class="live-dot"></span>
+              <span id="adminCardStatus">Loading overview</span>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="startup-chart-grid">
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">Research</span>
+                    <h3>Project status mix</h3>
+                  </div>
+                </div>
+                <canvas id="projectStatusChart"></canvas>
+              </article>
+
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">Startups</span>
+                    <h3>Startup sector spread</h3>
+                  </div>
+                </div>
+                <canvas id="startupSectorChart"></canvas>
+              </article>
+            </div>
+
+            <div class="startup-chart-grid" style="margin-top:16px;">
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">IPR</span>
+                    <h3>Patent approval mix</h3>
+                  </div>
+                </div>
+                <canvas id="iprStatusChart"></canvas>
+              </article>
+
+              <article class="chart-card startup-chart-card">
+                <div class="chart-card-head">
+                  <div>
+                    <span class="chart-kicker">Control center</span>
+                    <h3>Operational snapshot</h3>
+                  </div>
+                </div>
+
+                <div class="panel-body" style="padding:0; display:grid; gap:12px;">
+                  <div class="startup-widget-grid" style="margin-top:0;">
+                    <div class="startup-widget">
+                      <span class="sidebar-eyebrow">Approved</span>
+                      <strong id="approvedProjects">0</strong>
+                      <span>Research projects approved.</span>
+                    </div>
+
+                    <div class="startup-widget">
+                      <span class="sidebar-eyebrow">Pending</span>
+                      <strong id="pendingProjects">0</strong>
+                      <span>Research items waiting for review.</span>
+                    </div>
+
+                    <div class="startup-widget">
+                      <span class="sidebar-eyebrow">IPR Queue</span>
+                      <strong id="pendingIpr">0</strong>
+                      <span>Patents still awaiting approval.</span>
+                    </div>
+
+                    <div class="startup-widget">
+                      <span class="sidebar-eyebrow">Activity</span>
+                      <strong id="activityCount">0</strong>
+                      <span>Recent events captured by the system.</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="note-card" style="margin-top:16px;">
+              <strong>Operational readout</strong>
+              Use this view to assess backlog pressure, the balance of approved work and the breadth of startup activity across the platform.
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-header">
+            <div>
+              <div class="kicker">Activity Monitoring</div>
+              <h2 class="panel-title">Recent events and notifications</h2>
+              <p class="panel-subtitle">Track the latest platform actions and alerts in one place.</p>
+            </div>
+          </div>
+
+          <div class="panel-body">
+            <div class="split-shell" style="grid-template-columns: 1fr 1fr;">
+              <div>
+                <div class="sidebar-eyebrow">Activity feed</div>
+                <div id="activityFeed" class="activity-feed"></div>
+                <div id="activityEmptyState" class="dashboard-empty" hidden>
+                  <h3>No activity captured yet</h3>
+                  <p>Logs will appear here once actions are recorded in the system.</p>
+                </div>
+              </div>
+
+              <div>
+                <div class="sidebar-eyebrow">Notifications</div>
+                <ul id="notificationFeed" class="notification-list activity-feed"></ul>
+                <div id="notificationEmptyState" class="dashboard-empty" hidden>
+                  <h3>No notifications available</h3>
+                  <p>System notifications will show here once the queue fills in.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="startup-analytics-panel panel">
+        <div class="panel-header">
+          <div>
+            <div class="kicker">System Health</div>
+            <h2 class="panel-title">Health cards and report controls</h2>
+            <p class="panel-subtitle">Quick checks for database availability, queue pressure and recent platform throughput.</p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div id="healthGrid" class="health-grid"></div>
+
+          <div class="note-card">
+            <strong>Report export</strong>
+            Generate the CSV report from the current research dataset and use the result path for deployment or review.
+          </div>
+
+          <button class="btn btn-primary" type="button" onclick="generateReport()">Generate CSV Report</button>
+          <p id="reportMessage" class="panel-subtitle mt-16"></p>
+
+          <ul class="workflow-list">
+            <li><strong>Database</strong>Should remain connected and queryable.</li>
+            <li><strong>Queues</strong>Pending approvals indicate where attention is needed.</li>
+            <li><strong>Exports</strong>Use the report button to snapshot project data.</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+{% endblock %}
