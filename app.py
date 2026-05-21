@@ -36,6 +36,10 @@ database_url = (
     or os.getenv("MYSQL_URL")
     or "sqlite:///innosphere.db"
 )
+if database_url.startswith("mysql://"):
+    database_url = database_url.replace("mysql://", "mysql+pymysql://", 1)
+elif database_url.startswith("mysql+mysqldb://"):
+    database_url = database_url.replace("mysql+mysqldb://", "mysql+pymysql://", 1)
 if database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1)
 
