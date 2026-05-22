@@ -29,6 +29,7 @@ from backend.models.activity_log import ActivityLog
 from backend.models.collaboration import Collaboration
 from backend.models.project import Project
 from backend.config.db import db
+from backend.utils.seed_users import seed_users_from_csv
 import os
 from dotenv import load_dotenv
 app = Flask(__name__)
@@ -68,6 +69,7 @@ app.register_blueprint(report_bp)
 
 with app.app_context():
     db.create_all()
+    seed_users_from_csv()
 
 @app.route("/")
 def home():
