@@ -7,15 +7,38 @@
 <section class="auth-shell">
   <div class="auth-card">
     <div class="kicker">Authentication</div>
-    <h1>Login Page</h1>
+    <h1>Sign in to InnoSphere</h1>
     <p>
-      Authentication is still being wired into the application. This screen is now styled to match the rest of the portal and can be expanded into a real sign-in flow later.
+      Use your registered email and password to access the portal. Admin users will be sent to the admin control panel after sign in.
     </p>
 
-    <div class="field-actions" style="margin-top: 22px;">
-      <a href="/" class="btn btn-primary">Back to Home</a>
-      <a href="/dashboard" class="btn btn-secondary">Open Dashboard</a>
-    </div>
+    <form id="loginForm" class="startup-form" style="margin-top: 22px;">
+      <div class="field-grid">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="name@example.com" autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+        </div>
+      </div>
+
+      <div class="field-actions">
+        <button type="submit" class="btn btn-primary" id="loginSubmit">Sign in</button>
+        <a href="/" class="btn btn-secondary">Back to Home</a>
+      </div>
+
+      <p id="loginStatus" class="panel-subtitle" aria-live="polite" style="margin-top: 4px;"></p>
+    </form>
   </div>
 </section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.loginNext = {{ request.args.get("next", "")|tojson }};
+</script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 {% endblock %}

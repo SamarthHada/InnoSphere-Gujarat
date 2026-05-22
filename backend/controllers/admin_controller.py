@@ -1,5 +1,7 @@
+from functools import wraps
+
 from flask import Blueprint, jsonify
-from flask_login import login_required
+from flask_login import current_user, login_required
 
 from backend.services.project_service import (
     approve_project
@@ -11,11 +13,32 @@ admin_bp = Blueprint(
     __name__
 )
 
+
+def is_admin_user():
+    return (
+        current_user.is_authenticated
+        and str(getattr(current_user, "role", "")).strip().lower() == "admin"
+    )
+
+
+def admin_json_required(view):
+    @wraps(view)
+    @login_required
+    def wrapper(*args, **kwargs):
+        if not is_admin_user():
+            return jsonify({
+                "error": "Admin access required"
+            }), 403
+
+        return view(*args, **kwargs)
+
+    return wrapper
+
 @admin_bp.route(
     "/api/admin/approve/<int:project_id>",
     methods=["PUT"]
 )
-@login_required
+@admin_json_required
 def approve(project_id):
 
     project = approve_project(project_id)
@@ -34,7 +57,7 @@ def approve(project_id):
     "/api/admin/overview",
     methods=["GET"]
 )
-@login_required
+@admin_json_required
 def overview():
 
     return jsonify(get_admin_overview())

@@ -1,9 +1,11 @@
-from flask import Flask,request, render_template
+from flask import Flask,request, render_template, abort
+from flask_login import login_required
 from backend.config.db import db
 from backend.controllers.auth_controller import auth_bp
 from backend.controllers.research_controller import research_bp
 from backend.controllers.analytics_controller import analytics_bp
 from backend.controllers.admin_controller import admin_bp
+from backend.controllers.admin_controller import is_admin_user
 from backend.controllers.startup_controller import startup_bp
 from backend.controllers.ipr_controller import ipr_bp
 from backend.controllers.notification_controller import notification_bp
@@ -52,6 +54,7 @@ app.config["REMEMBER_COOKIE_HTTPONLY"] = True
 
 db.init_app(app)
 login_manager.init_app(app)
+login_manager.login_view = "auth.login_page"
 
 app.register_blueprint(auth_bp)
 app.register_blueprint(research_bp)
@@ -123,7 +126,11 @@ def research_form():
     return render_template("research_form.html")
 
 @app.route("/admin")
+@login_required
 def admin():
+    if not is_admin_user():
+        abort(403)
+
     return render_template("admin.html")
 
 @app.route("/ipr")
